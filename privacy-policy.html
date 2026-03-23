@@ -1,0 +1,299 @@
+<!doctype html>
+<!--
+oneal-browser-hub-research
+Copyright (C) 2026 Jeremiah O'Neal
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy - Jeremiahs Educational Gaming Website</title>
+  <meta name="description" content="Privacy Policy for Jeremiahs Educational Gaming Website and oneal-browser-hub-research.">
+  <meta name="keywords" content="privacy policy, educational games, Jeremiah O'Neal, oneal browser hub research">
+  <meta name="author" content="Jeremiah O'Neal">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onealbrowserhubresearch.j03.page/privacy-policy.html">
+  <link rel="icon" href="https://onealbrowserhubresearch.j03.page/assets/favicon.ico">
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --accent: #1d4ed8;
+      --accent-hover: #1e40af;
+      --border: #dbe2ea;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(180deg, #ffffff, #eef4ff);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 18px;
+    }
+
+    .site-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .brand-row {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      max-height: 88px;
+      max-width: 180px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    nav.top-nav {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background: var(--accent);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    main {
+      padding: 24px 18px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px 18px 36px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 1.6rem; }
+    }
+  </style>
+  <script>
+    (function () {
+      const originalTitle = document.title;
+      const hiddenTitle = 'Home';
+      const hiddenIcon = 'https://onealbrowserhubresearch.j03.page/assets/hidden.ico';
+      const currentIcon = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+      const originalIconHref = currentIcon ? currentIcon.href : '';
+
+      function setFavicon(href) {
+        let link = document.querySelector("link[rel='icon']");
+        if (!link) {
+          link = document.createElement('link');
+          link.setAttribute('rel', 'icon');
+          document.head.appendChild(link);
+        }
+        link.href = href;
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          document.title = hiddenTitle;
+          setFavicon(hiddenIcon);
+        } else {
+          document.title = originalTitle;
+          if (originalIconHref) setFavicon(originalIconHref);
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <div class="site-wrap">
+      <div class="brand-row">
+        <img class="brand-logo" src="https://onealbrowserhubresearch.j03.page/assets/logo.png" alt="Website logo">
+        <div>
+          <h1>Privacy Policy</h1>
+          <p class="subtitle">Jeremiahs Educational Gaming Website</p>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/">Back to Home</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/original-games/">Original Games</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/partners/">Partners</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="site-wrap">
+      <section class="panel">
+        <h2>1. Overview</h2>
+        <p>
+          This Privacy Policy explains, in general terms, how information may be collected,
+          used, and protected when you visit this website.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>2. Information Collected</h2>
+        <p>
+          This website may collect basic technical information automatically through standard
+          web hosting and browser processes, such as IP address, browser type, device type,
+          referring pages, and general usage data.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>3. Use of Information</h2>
+        <p>
+          Information may be used to operate the website, improve content, maintain security,
+          understand traffic patterns, and support general site administration.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>4. Cookies and Similar Technologies</h2>
+        <p>
+          This website may use cookies or similar browser technologies as part of normal
+          website functionality, analytics, preferences, or security-related operations.
+          You may be able to control cookies through your browser settings.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>5. Third-Party Services</h2>
+        <p>
+          If this website links to third-party sites or uses third-party services, those
+          services may have their own privacy practices. This website is not responsible
+          for the privacy policies or content of third-party services.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>6. Data Security</h2>
+        <p>
+          Reasonable efforts may be used to protect information, but no method of transmission
+          or storage is completely secure. Accordingly, no absolute guarantee of security can
+          be made.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>7. Children's Privacy</h2>
+        <p>
+          This website is intended to present educational and informational content. However,
+          no representation is made that the site is specifically directed to children under
+          any particular age unless otherwise stated.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>8. Changes to This Policy</h2>
+        <p>
+          This Privacy Policy may be updated from time to time. Any revised version will be
+          posted on this page with the updated effective date.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>9. Contact</h2>
+        <p>
+          For questions about this Privacy Policy, please use the contact method provided
+          elsewhere on the website, if available.
+        </p>
+        <p><strong>Effective date:</strong> March 23, 2026</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="site-wrap">
+      <div>(c) 2026 Jeremiah O'Neal</div>
+      <div class="footer-links">
+        <a href="https://onealbrowserhubresearch.j03.page/">Back to Home</a>
+        <a href="https://onealbrowserhubresearch.j03.page/terms-of-service.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
