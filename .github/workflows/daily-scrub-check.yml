@@ -1,0 +1,49 @@
+name: Daily scrub check
+
+on:
+  schedule:
+    - cron: '0 14 * * *'
+      timezone: 'America/Los_Angeles'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-and-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public files
+        id: check
+        shell: bash
+        run: |
+          set +e
+
+          BASE="https://onealbrowserhubresearch.j03.page"
+
+          INDEX_BODY="$(curl -fsSL "$BASE/" 2>/dev/null)"
+          INDEX_CODE=$?
+
+          SECRET_HTML_STATUS="$(curl -o /dev/null -s -w "%{http_code}" "$BASE/secret-check.html")"
+          SECRET_JS_STATUS="$(curl -o /dev/null -s -w "%{http_code}" "$BASE/simulated-secret.js")"
+
+          echo "secret_html_status=$SECRET_HTML_STATUS" >> "$GITHUB_OUTPUT"
+          echo "secret_js_status=$SECRET_JS_STATUS" >> "$GITHUB_OUTPUT"
+
+          if echo "$INDEX_BODY" | grep -q "not-ready"; then
+            echo "scrub_failed=true" >> "$GITHUB_OUTPUT"
+          elif [ "$SECRET_HTML_STATUS" = "200" ] || [ "$SECRET_JS_STATUS" = "200" ]; then
+            echo "scrub_failed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "scrub_failed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send ntfy alert
+        if: steps.check.outputs.scrub_failed == 'true'
+        run: |
+          curl \
+            -H "Title: oneal-browser-hub-research alert" \
+            -H "Priority: urgent" \
+            -H "Tags: warning,github" \
+            -d "Scrub check FAILED for https://onealbrowserhubresearch.j03.page | secret-check.html=${{ steps.check.outputs.secret_html_status }} | simulated-secret.js=${{ steps.check.outputs.secret_js_status }}" \
+            https://ntfy.sh/vjc8a-3xm1k-oneal-scrub-alert-2026
