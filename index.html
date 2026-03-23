@@ -1,101 +1,316 @@
 <!doctype html>
+<!--
+oneal-browser-hub-research
+Copyright (C) 2026  Jeremiah O'Neal
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>oneal-browser-hub-research</title>
+  <title>Jeremiahs Educational Gaming Website</title>
+  <meta name="description" content="Educational games, partner links, and safe web-based learning resources by Jeremiah O&#x27;Neal.">
+  <meta name="keywords" content="Jeremiahs Educational Gaming Website, educational games, safe games, learning resources, oneal browser hub research">
+  <meta name="author" content="Jeremiah O&#x27;Neal">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onealbrowserhubresearch.j03.page/">
+  <meta property="og:title" content="Jeremiahs Educational Gaming Website">
+  <meta property="og:description" content="Educational games, partner links, and safe web-based learning resources by Jeremiah O&#x27;Neal.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://onealbrowserhubresearch.j03.page/">
+  <meta property="og:image" content="https://onealbrowserhubresearch.j03.page/assets/logo.png">
+  <link rel="icon" href="https://onealbrowserhubresearch.j03.page/assets/favicon.ico">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      line-height: 1.5;
-    }
+:root {
+  --bg: #f7f9fc;
+  --panel: #ffffff;
+  --text: #1f2937;
+  --muted: #5b6472;
+  --accent: #1d4ed8;
+  --accent-hover: #1e40af;
+  --border: #dbe2ea;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
 
-    #status {
-      font-size: 2rem;
-      font-weight: bold;
-      padding: 16px 20px;
-      border: 2px solid #222;
-      display: inline-block;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    .ready {
-      background: #e8ffe8;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    .not-ready {
-      background: #ffe8e8;
-    }
+header {
+  background: linear-gradient(180deg, #ffffff, #eef4ff);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 18px;
+}
 
-    .small {
-      margin-top: 18px;
-      color: #444;
-      font-size: 0.95rem;
-    }
+.site-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    iframe {
-      display: none;
-    }
+.brand-row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.brand-logo {
+  max-height: 88px;
+  max-width: 180px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 8px;
+  border-radius: 12px;
+}
+
+h1 {
+  margin: 0 0 8px 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0;
+}
+
+.version-badge {
+  display: inline-block;
+  margin-top: 10px;
+  background: #dbeafe;
+  color: #1e3a8a;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.92rem;
+}
+
+nav.top-nav {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-btn, .action-btn, .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+}
+
+.nav-btn:hover, .action-btn:hover, .card-link:hover {
+  background: var(--accent-hover);
+}
+
+main {
+  padding: 24px 18px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 30px;
+  padding: 20px 18px 36px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 12px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.notice {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+}
   </style>
 </head>
 <body>
-  <h1>oneal-browser-hub-research</h1>
+  <header>
+    <div class="site-wrap">
+      <div class="brand-row">
+        <img class="brand-logo" src="https://onealbrowserhubresearch.j03.page/assets/logo.png" alt="Website logo">
+        <div>
+          <h1>Jeremiahs Educational Gaming Website</h1>
+          <p class="subtitle">Educational games, partner links, and safe web-based learning resources by Jeremiah O&#x27;Neal.</p>
+          <div class="version-badge">Version 0.1.0</div>
+        </div>
+      </div>
 
-  <div id="status" class="ready">checking...</div>
+      <nav class="top-nav">
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/">Home</a>
+        <a class="nav-btn" href="https://google.com">Exit</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/original-games/">Original Games</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/partners/">Partners</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="small">
-    Simulation: if a secret is still publicly reachable through the HTML-to-JS chain, this page will show <b>not-ready</b>.
-    If it has been scrubbed from that chain, this page will show <b>ready</b>.
+  <main>
+    <div class="site-wrap">
+      <section class="panel">
+        <h2>Educational gaming for learning and safe exploration</h2>
+        <p>
+          Jeremiah's Educational Gaming Website highlights original educational games,
+          partner listings, and safe web-based learning ideas. This site is designed to be
+          easy to navigate, clear to search engines, and useful for students, educators,
+          schools, families, and researchers.
+        </p>
+        <p class="notice">
+          Direct site root: <a href="https://onealbrowserhubresearch.j03.page/">https://onealbrowserhubresearch.j03.page/</a>
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Featured Original Games</h2>
+        <div class="grid">
+          <div class="card">
+              <h3>Math Treasure Quest</h3>
+              <p>Educational game listing for students, families, schools, and researchers.</p>
+              <a class="card-link" href="https://onealbrowserhubresearch.j03.page/open/index.html?game=Math Treasure Quest">Open game</a>
+            </div>
+<div class="card">
+              <h3>Science Word Maze</h3>
+              <p>Educational game listing for students, families, schools, and researchers.</p>
+              <a class="card-link" href="https://onealbrowserhubresearch.j03.page/open/index.html?game=Science Word Maze">Open game</a>
+            </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Featured Partners</h2>
+        <div class="grid">
+          <div class="card">
+              <h3>Academic Support Network</h3>
+              <p>Partner resource listing connected to educational gaming, safe browsing, and learning support.</p>
+              <a class="card-link" href="https://onealbrowserhubresearch.j03.page/partners/index.html">View partner page</a>
+            </div>
+<div class="card">
+              <h3>School Research Partner</h3>
+              <p>Partner resource listing connected to educational gaming, safe browsing, and learning support.</p>
+              <a class="card-link" href="https://onealbrowserhubresearch.j03.page/partners/index.html">View partner page</a>
+            </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+  <div class="site-wrap">
+    <div>(c) 2026 Jeremiah O&#x27;Neal</div>
+    <div class="footer-links">
+      <a href="https://onealbrowserhubresearch.j03.page/terms-of-service.html">Terms of Service</a>
+      <a href="https://onealbrowserhubresearch.j03.page/privacy-policy.html">Privacy Policy</a>
+    </div>
   </div>
-
-  <iframe id="secretProbe" src="secret-check.html"></iframe>
+</footer>
 
   <script>
-    (function () {
-      const statusEl = document.getElementById("status");
-      let finalSet = false;
-      let probeAlive = false;
+(function () {
+  const originalTitle = document.title;
+  const hiddenTitle = 'Home';
+  const hiddenIcon = 'https://onealbrowserhubresearch.j03.page/assets/hidden.ico';
+  const currentIcon = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+  const originalIconHref = currentIcon ? currentIcon.href : '';
 
-      function setReady() {
-        if (finalSet) return;
-        finalSet = true;
-        statusEl.textContent = "ready";
-        statusEl.className = "ready";
+  function setFavicon(href) {
+    let link = document.querySelector("link[rel='icon']");
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'icon');
+      document.head.appendChild(link);
+    }
+    link.href = href;
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      document.title = hiddenTitle;
+      if (hiddenIcon) {
+        setFavicon(hiddenIcon);
       }
-
-      function setNotReady() {
-        if (finalSet) return;
-        finalSet = true;
-        statusEl.textContent = "not-ready";
-        statusEl.className = "not-ready";
+    } else {
+      document.title = originalTitle;
+      if (originalIconHref) {
+        setFavicon(originalIconHref);
       }
-
-      window.addEventListener("message", function (event) {
-        if (!event.data || typeof event.data !== "object") return;
-
-        if (event.data.type === "probe-alive") {
-          probeAlive = true;
-        }
-
-        if (event.data.type === "secret-detected") {
-          setNotReady();
-        }
-      });
-
-      // If the probe page exists but no secret is detected shortly after,
-      // or if the probe page is missing entirely, mark as ready.
-      setTimeout(function () {
-        if (!finalSet) {
-          setReady();
-        }
-      }, 1200);
-
-      // Optional: if iframe hard-fails, still become ready quickly.
-      const iframe = document.getElementById("secretProbe");
-      iframe.addEventListener("error", function () {
-        setReady();
-      });
-    })();
-  </script>
+    }
+  });
+})();
+</script>
 </body>
 </html>
