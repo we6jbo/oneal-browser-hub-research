@@ -1,0 +1,300 @@
+<!doctype html>
+<!--
+oneal-browser-hub-research
+Copyright (C) 2026 Jeremiah O'Neal
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service - Jeremiahs Educational Gaming Website</title>
+  <meta name="description" content="Terms of Service for Jeremiahs Educational Gaming Website and oneal-browser-hub-research.">
+  <meta name="keywords" content="terms of service, educational games, Jeremiah O'Neal, oneal browser hub research">
+  <meta name="author" content="Jeremiah O'Neal">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onealbrowserhubresearch.j03.page/terms-of-service.html">
+  <link rel="icon" href="https://onealbrowserhubresearch.j03.page/assets/favicon.ico">
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --accent: #1d4ed8;
+      --accent-hover: #1e40af;
+      --border: #dbe2ea;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(180deg, #ffffff, #eef4ff);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 18px;
+    }
+
+    .site-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .brand-row {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      max-height: 88px;
+      max-width: 180px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    nav.top-nav {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background: var(--accent);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    main {
+      padding: 24px 18px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px 18px 36px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 1.6rem; }
+    }
+  </style>
+  <script>
+    (function () {
+      const originalTitle = document.title;
+      const hiddenTitle = 'Home';
+      const hiddenIcon = 'https://onealbrowserhubresearch.j03.page/assets/hidden.ico';
+      const currentIcon = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+      const originalIconHref = currentIcon ? currentIcon.href : '';
+
+      function setFavicon(href) {
+        let link = document.querySelector("link[rel='icon']");
+        if (!link) {
+          link = document.createElement('link');
+          link.setAttribute('rel', 'icon');
+          document.head.appendChild(link);
+        }
+        link.href = href;
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          document.title = hiddenTitle;
+          setFavicon(hiddenIcon);
+        } else {
+          document.title = originalTitle;
+          if (originalIconHref) setFavicon(originalIconHref);
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <div class="site-wrap">
+      <div class="brand-row">
+        <img class="brand-logo" src="https://onealbrowserhubresearch.j03.page/assets/logo.png" alt="Website logo">
+        <div>
+          <h1>Terms of Service</h1>
+          <p class="subtitle">Jeremiahs Educational Gaming Website</p>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/">Back to Home</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/original-games/">Original Games</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/partners/">Partners</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="site-wrap">
+      <section class="panel">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By accessing or using this website, you agree to be bound by these Terms of Service.
+          If you do not agree to these terms, please do not use the website.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>2. Website Purpose</h2>
+        <p>
+          This website is provided as an educational, informational, and creative platform.
+          Content may include original games, partner links, research-oriented material, and
+          general learning resources.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>3. Permitted Use</h2>
+        <p>
+          You may use the website for lawful personal, educational, and informational purposes.
+          You agree not to misuse the site, interfere with its operation, attempt unauthorized
+          access, or use the site in a way that could harm others.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>4. Intellectual Property</h2>
+        <p>
+          Unless otherwise stated, the content, design, text, and original materials on this
+          website are owned by or licensed to the site operator. Third-party names, marks, or
+          references remain the property of their respective owners.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>5. Third-Party Links</h2>
+        <p>
+          This website may include links to third-party sites or partner resources. Those sites
+          are provided for convenience only. The operator of this website is not responsible for
+          the content, policies, availability, or practices of third-party websites.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>6. No Warranties</h2>
+        <p>
+          This website is provided on an “as is” and “as available” basis without warranties of
+          any kind, express or implied, including but not limited to warranties of merchantability,
+          fitness for a particular purpose, and non-infringement.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>7. Limitation of Liability</h2>
+        <p>
+          To the fullest extent permitted by law, the operator of this website shall not be liable
+          for any indirect, incidental, special, consequential, or punitive damages arising from or
+          related to your use of the website.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>8. Changes to These Terms</h2>
+        <p>
+          These Terms of Service may be updated from time to time. Any revised version will be
+          posted on this page with the updated effective date.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>9. Contact</h2>
+        <p>
+          For questions about these Terms of Service, please use the contact method provided
+          elsewhere on the website, if available.
+        </p>
+        <p><strong>Effective date:</strong> March 23, 2026</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="site-wrap">
+      <div>(c) 2026 Jeremiah O'Neal</div>
+      <div class="footer-links">
+        <a href="https://onealbrowserhubresearch.j03.page/">Back to Home</a>
+        <a href="https://onealbrowserhubresearch.j03.page/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
