@@ -1,11 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stay Tuned</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>oneal-browser-hub-research</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.5;
+    }
+
+    #status {
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 16px 20px;
+      border: 2px solid #222;
+      display: inline-block;
+    }
+
+    .ready {
+      background: #e8ffe8;
+    }
+
+    .not-ready {
+      background: #ffe8e8;
+    }
+
+    .small {
+      margin-top: 18px;
+      color: #444;
+      font-size: 0.95rem;
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <p>Stay tuned March 24, 2026.</p>
+  <h1>oneal-browser-hub-research</h1>
+
+  <div id="status" class="ready">checking...</div>
+
+  <div class="small">
+    Simulation: if a secret is still publicly reachable through the HTML-to-JS chain, this page will show <b>not-ready</b>.
+    If it has been scrubbed from that chain, this page will show <b>ready</b>.
+  </div>
+
+  <iframe id="secretProbe" src="secret-check.html"></iframe>
+
+  <script>
+    (function () {
+      const statusEl = document.getElementById("status");
+      let finalSet = false;
+      let probeAlive = false;
+
+      function setReady() {
+        if (finalSet) return;
+        finalSet = true;
+        statusEl.textContent = "ready";
+        statusEl.className = "ready";
+      }
+
+      function setNotReady() {
+        if (finalSet) return;
+        finalSet = true;
+        statusEl.textContent = "not-ready";
+        statusEl.className = "not-ready";
+      }
+
+      window.addEventListener("message", function (event) {
+        if (!event.data || typeof event.data !== "object") return;
+
+        if (event.data.type === "probe-alive") {
+          probeAlive = true;
+        }
+
+        if (event.data.type === "secret-detected") {
+          setNotReady();
+        }
+      });
+
+      // If the probe page exists but no secret is detected shortly after,
+      // or if the probe page is missing entirely, mark as ready.
+      setTimeout(function () {
+        if (!finalSet) {
+          setReady();
+        }
+      }, 1200);
+
+      // Optional: if iframe hard-fails, still become ready quickly.
+      const iframe = document.getElementById("secretProbe");
+      iframe.addEventListener("error", function () {
+        setReady();
+      });
+    })();
+  </script>
 </body>
 </html>
