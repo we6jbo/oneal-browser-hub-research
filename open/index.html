@@ -1,1 +1,250 @@
+<!doctype html>
+<!--
+oneal-browser-hub-research
+Copyright (C) 2026 Jeremiah O'Neal
 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Game or Partner Not Yet Implemented</title>
+  <meta name="description" content="Placeholder page for games and partner links that are not yet implemented on oneal-browser-hub-research.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onealbrowserhubresearch.j03.page/open/index.html">
+  <link rel="icon" href="https://onealbrowserhubresearch.j03.page/assets/favicon.ico">
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --accent: #1d4ed8;
+      --accent-hover: #1e40af;
+      --border: #dbe2ea;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(180deg, #ffffff, #eef4ff);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 18px;
+    }
+
+    .site-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .brand-row {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      max-height: 88px;
+      max-width: 180px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    nav.top-nav {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background: var(--accent);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    main {
+      padding: 28px 18px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 12px;
+      background: #dbeafe;
+      color: #1e3a8a;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .game-name {
+      margin-top: 18px;
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px 18px 36px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-right: 12px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 1.6rem; }
+    }
+  </style>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const game = params.get('game');
+      const target = document.getElementById('selected-name');
+
+      document.addEventListener('DOMContentLoaded', function () {
+        if (game && target) {
+          target.textContent = "Requested item: " + game;
+        }
+      });
+
+      const originalTitle = document.title;
+      const hiddenTitle = 'Home';
+      const hiddenIcon = 'https://onealbrowserhubresearch.j03.page/assets/hidden.ico';
+      const currentIcon = document.querySelector("link[rel='icon']") || document.querySelector("link[rel='shortcut icon']");
+      const originalIconHref = currentIcon ? currentIcon.href : '';
+
+      function setFavicon(href) {
+        let link = document.querySelector("link[rel='icon']");
+        if (!link) {
+          link = document.createElement('link');
+          link.setAttribute('rel', 'icon');
+          document.head.appendChild(link);
+        }
+        link.href = href;
+      }
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          document.title = hiddenTitle;
+          setFavicon(hiddenIcon);
+        } else {
+          document.title = originalTitle;
+          if (originalIconHref) setFavicon(originalIconHref);
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <div class="site-wrap">
+      <div class="brand-row">
+        <img class="brand-logo" src="https://onealbrowserhubresearch.j03.page/assets/logo.png" alt="Website logo">
+        <div>
+          <h1>Not Yet Implemented</h1>
+          <p class="subtitle">Jeremiahs Educational Gaming Website</p>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/">Home</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/original-games/">Original Games</a>
+        <a class="nav-btn" href="https://onealbrowserhubresearch.j03.page/partners/">Partners</a>
+        <a class="nav-btn" href="https://google.com">Exit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="site-wrap">
+      <section class="panel">
+        <h2>This game or partnership is not yet implemented</h2>
+        <p>
+          I have not yet implemented this game or partnership page.
+          I plan to work on this on <strong>March 24, 2026</strong>.
+        </p>
+        <div class="status">Planned for 3-24-2026</div>
+        <div class="game-name" id="selected-name">Requested item: not specified</div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="site-wrap">
+      <div>(c) 2026 Jeremiah O'Neal</div>
+      <div class="footer-links">
+        <a href="https://onealbrowserhubresearch.j03.page/">Back to Home</a>
+        <a href="https://onealbrowserhubresearch.j03.page/terms-of-service.html">Terms of Service</a>
+        <a href="https://onealbrowserhubresearch.j03.page/privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
