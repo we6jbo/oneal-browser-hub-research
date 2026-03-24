@@ -1,0 +1,88 @@
+<!doctype html>
+<!--
+Treasure Quest
+Copyright (C) 2026 Jeremiah O'Neal
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Treasure Quest</title>
+  <meta name="description" content="Treasure Quest is a browser-based original educational adventure game featuring rooms, keys, treasures, scoring, inventory management, and a limited light source.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://onealbrowserhubresearch.j03.page/games/treasurequest/">
+  <link rel="icon" href="https://onealbrowserhubresearch.j03.page/assets/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="header-row">
+        <div>
+          <h1 id="game-title">Treasure Quest</h1>
+          <p class="subtitle">Explore rooms, carry treasure, manage your light, and bank treasure in the treasure room.</p>
+        </div>
+        <div class="header-actions">
+          <a class="button" href="https://onealbrowserhubresearch.j03.page/original-games/">Back to Games</a>
+          <button id="restart-btn" class="button alt">Restart</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel stats-panel">
+      <div class="stats-grid">
+        <div><strong>Score:</strong> <span id="score">0</span></div>
+        <div><strong>Turns Left:</strong> <span id="light-turns">50</span></div>
+        <div><strong>Carry Weight:</strong> <span id="carry-weight">0</span> / <span id="max-carry">0</span></div>
+        <div><strong>Current Room:</strong> <span id="room-name">-</span></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 id="room-title">Loading...</h2>
+      <p id="room-story"></p>
+      <p id="room-extra" class="muted"></p>
+    </section>
+
+    <section class="panel">
+      <h3>Movement</h3>
+      <div id="movement-buttons" class="button-row"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Room Items</h3>
+      <div id="room-items"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Inventory</h3>
+      <div id="inventory-items"></div>
+      <div class="inventory-actions">
+        <button id="deposit-btn" class="button alt">Deposit Treasure Here</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>Game Log</h3>
+      <div id="log" class="log-box"></div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

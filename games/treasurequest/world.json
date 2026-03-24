@@ -1,0 +1,153 @@
+{
+  "gameTitle": "Treasure Quest",
+  "maxCarryWeight": 15,
+  "lightTurns": 50,
+  "startRoom": "treasure_room",
+  "treasureRoomId": "treasure_room",
+  "rooms": {
+    "treasure_room": {
+      "title": "Treasure Room",
+      "story": "A stone chamber with old shelves, a dusty ledger, and a scoring altar. Return treasure here to bank points.",
+      "exits": {
+        "north": "round_room"
+      },
+      "items": [],
+      "isTreasureRoom": true
+    },
+    "round_room": {
+      "title": "Round Room",
+      "story": "A circular chamber with a cracked dome above. Footsteps echo from every direction.",
+      "exits": {
+        "south": "treasure_room",
+        "west": "dam_room",
+        "east": "engine_room",
+        "north": "gallery_room"
+      },
+      "items": [
+        {
+          "id": "bronze_coin",
+          "name": "Bronze Coin",
+          "type": "treasure",
+          "weight": 1,
+          "score": 10,
+          "description": "A tarnished bronze coin."
+        }
+      ]
+    },
+    "dam_room": {
+      "title": "Dam Room",
+      "story": "A roaring underground spillway fills this room with mist. A rusted hook hangs from the wall.",
+      "exits": {
+        "north": "round_room"
+      },
+      "items": [
+        {
+          "id": "iron_key",
+          "name": "Iron Key",
+          "type": "key",
+          "weight": 1,
+          "keyId": "iron_key",
+          "description": "A cold iron key with worn teeth."
+        },
+        {
+          "id": "silver_cup",
+          "name": "Silver Cup",
+          "type": "treasure",
+          "weight": 3,
+          "score": 25,
+          "description": "A dented silver cup."
+        }
+      ]
+    },
+    "engine_room": {
+      "title": "Engine Room",
+      "story": "Ancient machinery sits silent here. Grease stains the floor. A locked eastern hatch blocks the way.",
+      "exits": {
+        "west": "round_room",
+        "east": {
+          "room": "vault_entry",
+          "locked": true,
+          "keyId": "iron_key",
+          "message": "The eastern hatch is locked. You need the Iron Key."
+        }
+      },
+      "items": []
+    },
+    "gallery_room": {
+      "title": "Gallery Room",
+      "story": "Paintings have rotted away, but the frames still glitter faintly.",
+      "exits": {
+        "south": "round_room",
+        "east": "library_room"
+      },
+      "items": [
+        {
+          "id": "ruby_idol",
+          "name": "Ruby Idol",
+          "type": "treasure",
+          "weight": 4,
+          "score": 40,
+          "description": "A small ruby idol with careful carvings."
+        }
+      ]
+    },
+    "library_room": {
+      "title": "Library Room",
+      "story": "Rows of collapsed shelves line the walls. A narrow passage leads south.",
+      "exits": {
+        "west": "gallery_room",
+        "south": "vault_entry"
+      },
+      "items": [
+        {
+          "id": "brass_key",
+          "name": "Brass Key",
+          "type": "key",
+          "weight": 1,
+          "keyId": "brass_key",
+          "description": "A brass key polished by age."
+        }
+      ]
+    },
+    "vault_entry": {
+      "title": "Vault Entry",
+      "story": "A thick vault door stands to the east. Scratches on the floor show that treasure once moved through here.",
+      "exits": {
+        "west": "engine_room",
+        "north": "library_room",
+        "east": {
+          "room": "vault_room",
+          "locked": true,
+          "keyId": "brass_key",
+          "message": "The vault door is sealed. You need the Brass Key."
+        }
+      },
+      "items": []
+    },
+    "vault_room": {
+      "title": "Vault Room",
+      "story": "A hidden vault packed with glittering relics. You should not stay here longer than necessary.",
+      "exits": {
+        "west": "vault_entry"
+      },
+      "items": [
+        {
+          "id": "gold_bar",
+          "name": "Gold Bar",
+          "type": "treasure",
+          "weight": 6,
+          "score": 80,
+          "description": "A heavy gold bar."
+        },
+        {
+          "id": "emerald_chain",
+          "name": "Emerald Chain",
+          "type": "treasure",
+          "weight": 2,
+          "score": 55,
+          "description": "A fine chain set with emeralds."
+        }
+      ]
+    }
+  }
+}
