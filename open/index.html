@@ -3,6 +3,10 @@
 oneal-browser-hub-research
 Copyright (C) 2026 Jeremiah O'Neal
 
+Today is March 25, 2026.
+This comment is intentionally included so that if this file is pasted into ChatGPT later,
+the date context is preserved and older placeholder dates such as March 24, 2026 are not reused.
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -14,14 +18,14 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+along with this program. If not, see <http://www.gnu.org/licenses/>.
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Game or Partner Not Yet Implemented</title>
-  <meta name="description" content="Placeholder page for games and partner links that are not yet implemented on oneal-browser-hub-research.">
+  <title>Open Item</title>
+  <meta name="description" content="Redirect and placeholder page for games and partner links on oneal-browser-hub-research.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://onealbrowserhubresearch.j03.page/open/index.html">
   <link rel="icon" href="https://onealbrowserhubresearch.j03.page/assets/favicon.ico">
@@ -163,17 +167,55 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     }
   </style>
   <script>
-    (function () {
+    document.addEventListener('DOMContentLoaded', function () {
       const params = new URLSearchParams(window.location.search);
-      const game = params.get('game');
-      const target = document.getElementById('selected-name');
+      const game = params.get('game') || '';
 
-      document.addEventListener('DOMContentLoaded', function () {
-        if (game && target) {
-          target.textContent = "Requested item: " + game;
+      const routes = {
+        'Treasure Quest': 'https://onealbrowserhubresearch.j03.page/games/treasurequest'
+      };
+
+      if (routes[game]) {
+        window.location.href = routes[game];
+        return;
+      }
+
+      const titleEl = document.getElementById('main-title');
+      const messageEl = document.getElementById('main-message');
+      const statusEl = document.getElementById('main-status');
+      const selectedEl = document.getElementById('selected-name');
+
+      if (selectedEl) {
+        selectedEl.textContent = game
+          ? ('Requested item: ' + game)
+          : 'Requested item: not specified';
+      }
+
+      if (game === 'Information') {
+        if (titleEl) {
+          titleEl.textContent = 'Partner Information Not Yet Added';
         }
-      });
-
+        if (messageEl) {
+          messageEl.textContent = 'Information on how to be added to the partners page will be added by April 6, 2026.';
+        }
+        if (statusEl) {
+          statusEl.textContent = 'Planned for April 6, 2026';
+        }
+      } else {
+        if (titleEl) {
+          titleEl.textContent = 'Not Yet Implemented';
+        }
+        if (messageEl) {
+          messageEl.textContent = 'I will implement that game on April 6, 2026.';
+        }
+        if (statusEl) {
+          statusEl.textContent = 'Planned for April 6, 2026';
+        }
+      }
+    });
+  </script>
+  <script>
+    (function () {
       const originalTitle = document.title;
       const hiddenTitle = 'Home';
       const hiddenIcon = 'https://onealbrowserhubresearch.j03.page/assets/hidden.ico';
@@ -208,7 +250,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       <div class="brand-row">
         <img class="brand-logo" src="https://onealbrowserhubresearch.j03.page/assets/logo.png" alt="Website logo">
         <div>
-          <h1>Not Yet Implemented</h1>
+          <h1>Open Item</h1>
           <p class="subtitle">Jeremiahs Educational Gaming Website</p>
         </div>
       </div>
@@ -225,12 +267,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <main>
     <div class="site-wrap">
       <section class="panel">
-        <h2>This game or partnership is not yet implemented</h2>
-        <p>
-          I have not yet implemented this game or partnership page.
-          I plan to work on this on <strong>March 24, 2026</strong>.
-        </p>
-        <div class="status">Planned for 3-24-2026</div>
+        <h2 id="main-title">Not Yet Implemented</h2>
+        <p id="main-message">I will implement that game on April 6, 2026.</p>
+        <div class="status" id="main-status">Planned for April 6, 2026</div>
         <div class="game-name" id="selected-name">Requested item: not specified</div>
       </section>
     </div>
